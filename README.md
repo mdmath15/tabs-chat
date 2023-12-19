@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# GoBots - Chat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de chat simples que possibilita a comunicação entre abas do navegador usando a BroadcastChannel API. Desenvolvido com React e TypeScript, o projeto também utiliza Zustand para gerenciamento de estado, Axios para requisições HTTP, React Query para gerenciamento de dados assíncronos, Styled-Components para estilização e Vite como build tool. Ele oferece uma maneira prática e eficiente para troca de mensagens em tempo real dentro do mesmo navegador.
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de começar, certifique-se de ter o Docker instalado em sua máquina. Se você não tem o Docker, pode baixá-lo e instalá-lo [aqui](https://www.docker.com/get-started).
 
-## Expanding the ESLint configuration
+## Configuração
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone o repositório do projeto para a sua máquina local:
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+git clone https://github.com/mdmath15/gobots-chat.git
+cd gobots-chat
+``` 
+### Construção da Imagem Docker
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Para construir a imagem Docker do seu projeto, execute o seguinte comando no diretório raiz do projeto:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```bash
+docker build -t nome-da-imagem .
+``` 
+Este comando construirá uma imagem Docker usando o Dockerfile fornecido. Substitua nome-da-imagem pelo nome que você deseja dar à sua imagem.
+
+### Executando o Projeto
+
+Depois de construir a imagem, você pode executar o projeto com o seguinte comando:
+
+```bash
+docker run -p 8080:8080 nome-da-imagem
+``` 
+Isso iniciará um servidor na porta 8080. Você pode acessar o aplicativo no seu navegador em http://localhost:8080.
