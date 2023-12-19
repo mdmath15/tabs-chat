@@ -17,6 +17,7 @@ export const Container = styled.div<ContainerProps>`
     margin-bottom: ${theme.spacing.medium};
     box-shadow: ${theme.boxShadow.small};
     margin-left: ${isCurrentUser ? 'auto' : 0};
+    max-width: 75%;
   `}
 `;
 
@@ -44,6 +45,8 @@ export const Header = styled.header`
 export const Content = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.fonts.size.medium};
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     padding: 0;
     margin: 0;
   `}
