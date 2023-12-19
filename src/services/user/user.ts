@@ -16,9 +16,11 @@ const broadcastChannel = broadcastChannelService.createBroadcastChannel<
 >(channelName, actionHandlersMap);
 
 const askUsername = (): string => {
-  const username = prompt('Digite seu nome (deve conter mais de 2 caracteres');
+  const username = prompt(
+    'Digite seu nome (deve conter mais de 2 caracteres e menos de 24).'
+  );
 
-  if (username === null || username?.length < 3) {
+  if (username === null || username?.length < 3 || username?.length > 24) {
     return askUsername();
   }
 
