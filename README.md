@@ -1,4 +1,4 @@
-# GoBots - Chat
+# Tabs Chat
 
 Este é um projeto de chat simples que possibilita a comunicação entre abas do navegador usando a BroadcastChannel API. Desenvolvido com React e TypeScript, o projeto também utiliza Zustand para gerenciamento de estado, Axios para requisições HTTP, React Query para gerenciamento de dados assíncronos, Styled-Components para estilização e Vite como build tool. Ele oferece uma maneira prática e eficiente para troca de mensagens em tempo real dentro do mesmo navegador.
 
